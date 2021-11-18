@@ -6,7 +6,7 @@ const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings/${user.email}`)
+    fetch(`https://fierce-sierra-23907.herokuapp.com/bookings/${user.email}`)
       .then((res) => res.json())
       .then((data) => setBookings(data));
   }, []);
@@ -15,7 +15,7 @@ const MyBookings = () => {
       "Are you sure, you want to delete this package?"
     );
     if (confirmLog) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`https://fierce-sierra-23907.herokuapp.com/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
